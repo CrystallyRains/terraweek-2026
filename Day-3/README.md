@@ -1,4 +1,4 @@
-# 🚀 TerraWeek Challenge - Day 3
+# TerraWeek Challenge - Day 3
 
 ## Overview
 
@@ -10,7 +10,7 @@ Today's goal wasn't just to create an AWS resource but also to understand how Te
 
 ---
 
-# 🎯 Learning Objectives
+# Learning Objectives
 
 By the end of Day 3, I wanted to understand:
 
@@ -24,7 +24,7 @@ By the end of Day 3, I wanted to understand:
 
 ---
 
-# ☁️ What is a Resource?
+# What is a Resource?
 
 A resource represents a piece of infrastructure that Terraform creates and manages.
 
@@ -42,7 +42,7 @@ Think of resources as the "building blocks" of your cloud infrastructure.
 
 ---
 
-# 🏗️ Anatomy of a Resource Block
+# Anatomy of a Resource Block
 
 Every Terraform resource follows a similar structure.
 
@@ -106,7 +106,7 @@ Examples include:
 
 ---
 
-# 🌍 Terraform Supports Multiple Cloud Providers
+# Terraform Supports Multiple Cloud Providers
 
 One of the biggest advantages of Terraform is that the same language (HCL) can be used to manage different cloud platforms.
 
@@ -120,19 +120,13 @@ Although the resource types change depending on the provider, the overall struct
 
 ---
 
-# 🔗 Understanding Resource Dependencies
+# Understanding Resource Dependencies
 
 One of the concepts that stood out to me today was how Terraform figures out the order in which resources should be created.
 
-Imagine you're building a house.
+Imagine you're building a house...but you can't build the roof before the walls.
 
-You can't build the roof before the walls.
-
-Similarly, in cloud infrastructure, some resources depend on others.
-
-For example, an EC2 instance may need a Security Group before it can be launched.
-
-Instead of asking us to manually define the order, Terraform builds something called a **dependency graph**.
+Similarly, in cloud infrastructure, some resources depend on others. For example, an EC2 instance may need a Security Group before it can be launched. Instead of asking us to manually define the order, Terraform builds something called a **dependency graph**.
 
 This graph helps Terraform understand which resources depend on others and determines the correct creation order automatically.
 
@@ -161,9 +155,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-Notice how the EC2 instance references the Security Group ID.
-
-Because of this reference, Terraform automatically understands that the Security Group must be created first.
+Notice how the EC2 instance references the Security Group ID. Because of this reference, Terraform automatically understands that the Security Group must be created first.
 
 This is called an **implicit dependency**, and it's the most common type of dependency you'll work with.
 
@@ -293,7 +285,7 @@ Creates or updates infrastructure based on the execution plan.
 
 ---
 
-# 💡 Key Takeaways
+# Key Takeaways
 
 - Resources are the foundation of every Terraform project.
 - Every resource follows a consistent structure, making Terraform easier to learn.
@@ -305,13 +297,13 @@ Creates or updates infrastructure based on the execution plan.
 
 ---
 
-# 📚 References
+# References
 
 - Terraform Documentation: https://developer.hashicorp.com/terraform/docs
 - AWS Provider Documentation: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
 ---
 
-## 🚀 What's Next?
+## What's Next?
 
 In Day 4, I'll continue building on these concepts by exploring Terraform State and understanding how Terraform keeps track of the infrastructure it manages.
