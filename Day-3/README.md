@@ -132,7 +132,7 @@ This graph helps Terraform understand which resources depend on others and deter
 
 ---
 
-# 🤝 Implicit Dependencies
+# Implicit Dependencies
 
 Most of the time, Terraform understands dependencies automatically.
 
@@ -161,7 +161,7 @@ This is called an **implicit dependency**, and it's the most common type of depe
 
 ---
 
-# 📌 Explicit Dependencies
+# Explicit Dependencies
 
 Sometimes Terraform cannot determine the dependency automatically because there is no direct reference between two resources.
 
@@ -183,7 +183,7 @@ As a best practice, `depends_on` should only be used when Terraform cannot infer
 
 ---
 
-# 🔄 Lifecycle Meta-Arguments
+# Lifecycle Meta-Arguments
 
 Terraform also provides lifecycle settings that control how resources are managed.
 
@@ -213,7 +213,7 @@ This is useful when another service or team manages part of a resource.
 
 ---
 
-# ⚙️ Provisioners
+# Provisioners
 
 Provisioners allow Terraform to execute scripts after a resource has been created.
 
@@ -228,7 +228,7 @@ In many cases, tools like cloud-init, configuration management tools, or CI/CD p
 
 ---
 
-# 📂 Files Used
+# Files Used
 
 ```
 day-03/
@@ -243,7 +243,7 @@ day-03/
 
 ---
 
-# 💻 Terraform Commands Used
+# Terraform Commands Used
 
 ```bash
 terraform init
