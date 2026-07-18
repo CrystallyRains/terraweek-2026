@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    working-directory: Day-6
+
 jobs:
   terraform:
     name: Format, Validate, Test, Plan
@@ -23,33 +27,26 @@ jobs:
         with:
           terraform_version: "1.10.0"
 
-      # Fails the build if any .tf file isn't formatted correctly
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
 
-      # No backend access needed to validate syntax/config
       - name: Terraform Init (no backend)
         run: terraform init -backend=false
 
       - name: Terraform Validate
         run: terraform validate
 
-      # Plan-based native tests - no AWS credentials required
       - name: Terraform Test
         run: terraform test
 
-      # Static security scan of the Terraform config
       - name: Run Trivy Config Scan
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: "config"
-          scan-ref: "."
+          scan-ref: "Day-6"
           exit-code: "1"
           severity: "CRITICAL,HIGH"
 
-      # Real plan against AWS - only runs with credentials configured as
-      # repo secrets (AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY). Skipped
-      # automatically on forks / PRs without secret access.
       - name: Configure AWS Credentials
         if: github.event_name == 'push'
         uses: aws-actions/configure-aws-credentials@v4
