@@ -1,4 +1,4 @@
-# Terraform AWS Infrastructure Capstone
+# Terraform Capstone Project
 
 This project is the final capstone of the **TrainWithShubham TerraWeek Challenge**. It brings together everything covered throughout the week into one practical Terraform project that demonstrates how real-world infrastructure can be managed using Infrastructure as Code (IaC).
 
@@ -22,6 +22,21 @@ The project provisions a small AWS environment consisting of:
 - Multiple environments using Terraform Workspaces
 
 Although the infrastructure itself is intentionally simple, the engineering practices used throughout the project closely resemble those used in production environments.
+
+---
+
+# Technologies Used
+
+This project uses the following tools and services:
+
+- Terraform
+- AWS Provider
+- Amazon EC2
+- Amazon VPC
+- Amazon S3 (Remote Backend)
+- Terraform Registry Modules
+- GitHub Actions
+- Trivy
 
 ---
 
@@ -105,9 +120,9 @@ day06/
 
 ## Providers
 
-A provider allows Terraform to communicate with a specific platform.
+Terraform communicates with cloud platforms through providers.
 
-In this project we're using the AWS Provider, which enables Terraform to create and manage AWS resources such as VPCs, EC2 instances, and Security Groups.
+This project uses the AWS Provider, which allows Terraform to provision AWS resources such as VPCs, EC2 instances, and Security Groups.
 
 ---
 
@@ -173,7 +188,9 @@ For the Security Group, this project uses the official community module:
 terraform-aws-modules/security-group/aws
 ```
 
-Learning when to build your own module and when to use a Registry module is an important Terraform skill.
+The Terraform Registry provides thousands of reusable modules maintained by both HashiCorp and the community.
+
+In this project, the official Security Group module from the Registry is used instead of creating every security group resource manually. This helps reduce boilerplate while following community best practices.
 
 ---
 
@@ -212,7 +229,7 @@ Every push automatically runs:
 - Trivy Security Scan
 - terraform plan
 
-This ensures infrastructure changes are validated before deployment.
+This workflow acts as an automated quality check. Every infrastructure change is formatted, validated, tested, scanned for common security issues, and finally planned before it reaches AWS.
 
 ---
 
@@ -333,6 +350,8 @@ terraform destroy
 - No Hardcoded Secrets
 
 - Infrastructure Validation
+  
+- Version Control with Git and GitHub
 
 ---
 
