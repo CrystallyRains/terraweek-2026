@@ -102,11 +102,6 @@ Hopefully, it makes Terraform a little easier to understand for the next person 
 - Trivy
 
 ---
-
-# Related Posts
-
-Throughout TerraWeek, I also documented my daily learnings on LinkedIn as part of the Learn in Public challenge.
-
 ---
 
 If you find this repository useful, feel free to explore the project, try it yourself, or use it as a reference while learning Terraform.
