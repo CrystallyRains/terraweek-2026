@@ -1,0 +1,5 @@
+ami_id         = "ami-0b910d1016287a5e7"
+instance_name  = "terraweek-day3"
+instance_type   = "t2.micro"
+key_name        = "terraweek-key"
+public_key_path = "/Users/user1/.ssh/id_ed25519.pub"
