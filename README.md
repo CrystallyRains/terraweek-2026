@@ -1,4 +1,4 @@
-# TerraWeek 2026 – My Terraform Learning Journey 💫
+# TerraWeek 2026 - My Terraform Learning Journey 💫
 
 This repository documents my journey through the **TrainWithShubham TerraWeek Challenge 2026**, where I spent a week learning Terraform by building infrastructure step by step instead of jumping straight into large projects.
 
